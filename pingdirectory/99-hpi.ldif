@@ -3,13 +3,15 @@ objectClass: top
 objectClass: ldapSubentry
 objectClass: subschema
 cn: schema
+attributeTypes: ( hpiRelatedProfileType-OID NAME 'hpiRelatedProfileType' DESC 'hpiRelatedProfileType' USAGE userApplications )
 attributeTypes: ( hpiDeviceSerial-OID NAME 'hpiDeviceSerial' DESC 'hpiDeviceSerial' SINGLE-VALUE USAGE userApplications )
-attributeTypes: ( hpiRelatedObject-OID NAME 'hpiRelatedProfile' DESC 'hpiRelatedProfile' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 USAGE userApplications )
+attributeTypes: ( hpiRelatedProfileDN-OID NAME 'hpiRelatedProfileDN' DESC 'hpiRelatedProfileDN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 USAGE userApplications )
+attributeTypes: ( hpiRelatedDeviceDN-OID NAME 'hpiRelatedDeviceDN' DESC 'hpiRelatedDeviceDN' SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 USAGE userApplications )
 attributeTypes: ( hpiProfileType-OID NAME 'hpiProfileType' DESC 'hpiProfileType' SINGLE-VALUE USAGE userApplications X-ALLOWED-VALUE ( 'Commercial' 'Consumer' ) )
 attributeTypes: ( hpiUsername-OID NAME 'hpiUsername' DESC 'hpiUsername' USAGE userApplications )
 attributeTypes: ( hpiDeviceModel-OID NAME 'hpiDeviceModel' DESC 'hpiDeviceModel' SINGLE-VALUE USAGE userApplications )
-attributeTypes: ( hpiProfiles-OID NAME 'hpiProfiles' DESC 'hpiProfiles' USAGE userApplications )
+attributeTypes: ( hpiRelatedProfileCN-OID NAME 'hpiRelatedProfileCN' DESC 'hpiRelatedProfileCN' USAGE userApplications )
 objectClasses: ( hpiProfile-OID NAME 'hpiProfile' DESC 'hpiProfile' STRUCTURAL MUST hpiProfileType MAY ( cn $ givenName $ sn ) )
 objectClasses: ( hpiDevice-OID NAME 'hpiDevice' DESC 'hpiDevice' STRUCTURAL MAY ( hpiDeviceModel $ hpiDeviceSerial ) )
-objectClasses: ( hpiPerson-OID NAME 'hpiPerson' DESC 'hpiPerson' STRUCTURAL MAY ( hpiProfiles $ hpiUsername $ userPassword $ hpiRelatedProfile ) )
+objectClasses: ( hpiPerson-OID NAME 'hpiPerson' DESC 'hpiPerson' STRUCTURAL MAY ( hpiRelatedDeviceDN $ hpiRelatedProfileCN $ hpiRelatedProfileDN $ hpiRelatedProfileType $ hpiUsername $ userPassword ) )
 
