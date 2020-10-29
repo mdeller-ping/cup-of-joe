@@ -1,7 +1,7 @@
 // variable definitions and building authorization url
 
 const clientId = 'Implicit';
-const baseUrl = 'http://account.hpi.demoenvi.com/'; // URL of where you will host this application
+const baseUrl = 'https://account.hpi.demoenvi.com/'; // URL of where you will host this application
 
 const scopes = 'openid profile ds'; // default scopes to request
 const responseType = 'token id_token';
