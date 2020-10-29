@@ -1,0 +1,17 @@
+dsconfig create-virtual-attribute \
+    --name hpiRelatedProfileCN  \
+    --type mirror  \
+    --set "description:Mirror CN from related hpiProfile"  \
+    --set enabled:true  \
+    --set attribute-type:hpirelatedprofilecn  \
+    --set source-attribute:cn  \
+    --set source-entry-dn-attribute:hpirelatedprofiledn 
+
+dsconfig create-virtual-attribute \
+    --name hpiRelatedProfileType  \
+    --type mirror  \
+    --set "description:Mirror hpiProfileType from related hpiProfile"  \
+    --set enabled:true  \
+    --set attribute-type:hpirelatedprofiletype  \
+    --set source-attribute:hpiprofiletype  \
+    --set source-entry-dn-attribute:hpirelatedprofiledn 
