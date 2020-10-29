@@ -44,7 +44,7 @@
         Cookies.remove('uuid', { domain: cookieDomain });
         Cookies.remove('nonce', { domain: cookieDomain });
 
-        let logoffUrl = authUrl + '/idp/startSLO.ping?TargetResource=http://www.hpi.demoenvi.com';
+        let logoffUrl = authUrl + '/idp/startSLO.ping?TargetResource=https://www.hpi.demoenvi.com';
 
         window.location.replace(logoffUrl);
       }

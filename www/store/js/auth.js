@@ -1,7 +1,7 @@
 // variable definitions and building authorization url
 
 const clientId = 'Implicit';
-const baseUrl = 'http://store.example.com/'; // URL of where you will host this application
+const baseUrl = 'https://store.hpi.demoenvi.com/'; // URL of where you will host this application
 
 const scopes = 'openid profile ds'; // default scopes to request
 const responseType = 'token id_token';
@@ -11,7 +11,7 @@ const landingUrl = baseUrl; // url to send the person once authentication is com
 const logoutUrl = baseUrl + 'logout/'; // whitelisted url to send a person who wants to logout
 const redirectUri = baseUrl + 'login/'; // whitelisted url P14C sends the token or code to
 
-const authUrl = 'https://pingfederate:9031';
+const authUrl = 'https://auth.hpi.demoenvi.com';
 
 // if clientId missing warn the user
 if (!clientId) {
